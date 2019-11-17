@@ -297,25 +297,7 @@ class AttendanceVC: UIViewController ,NVActivityIndicatorViewable,FSCalendarDele
       }
     }
   }
-  func apiGetAttendance(StartDate:String,EndDate:String){
-    self.startAnimating()
-    getCookies()
-    let param = ["start":StartDate,
-                 "end":EndDate,
-                 "campus":UserDefault.shared.isCampus] as [String : Any]
-    AFWrapper.requestPOSTURL(UserDefault.shared.isBaseURL + Constants.URLS.attendanceByUser, params: param as [String : AnyObject], headers: nil, success: { (JSON) in
-      self.stopAnimating()
-      print(JSON)
-      self.getAttendenceList  = Mapper<AttendanceModel>().map(JSONObject: JSON.rawValue)!
-      self.ViewCalander.reloadData()
-      self.SetDate(StartDate: StartDate)
-      
-      
-    }) { (Error) in
-      print(Error)
-      self.stopAnimating()
-    }
-  }
+  
   
 }
 extension Date {

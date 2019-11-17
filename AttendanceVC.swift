@@ -1,10 +1,4 @@
-//
-//  AttendanceVC.swift
-//  Bluecoin IoT
-//
-//  Created by hiral kalola on 27/05/19.
-//  Copyright © 2019 Mitesh Patel. All rights reserved.
-//
+
 
 import UIKit
 import FSCalendar
